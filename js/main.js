@@ -1,6 +1,6 @@
-const nome = document.getElementById("nome").value;
-const km = document.getElementById("chilometri").value;
-const eta = document.getElementById("eta").value;
+const nome = document.getElementById("nome");
+const km = document.getElementById("chilometri");
+const eta = document.getElementById("eta");
 const button = document.querySelector("button");
 
 console.log(nome, km);
@@ -12,7 +12,7 @@ function genera() {
 
   // CALCOLO PREZZO BIGLIETTO
 
-  let totaleCorsa = chilometri * 0.21;
+  let totaleCorsa = km * 0.21;
 
   // variante minorenne con sconto 20%
 
