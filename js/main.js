@@ -7,23 +7,28 @@ console.log(nome, km);
 
 button.addEventListener("click", genera);
 
-function genera() {
+function genera(event) {
+  event.preventDefault()
   document.getElementById("outputNome").innerHTML = nome.value;
 
   // CALCOLO PREZZO BIGLIETTO
 
-  let totaleCorsa = km * 0.21;
+  let totaleCorsa = km.value * 0.21;
+  let sconto;
+
+  console.log("eta", eta)
+  console.log("eta value", eta.value)
 
   // variante minorenne con sconto 20%
 
-  if (eta < 18) {
-    totaleCorsa = totaleCorsa * 0.8;
+  if (eta === "minore") {
+    sconto = (totaleCorsa * 20) / 100;
   }
 
   // variante over 65 con sconto 40%
 
-  else if (eta > 65) {
-      totaleCorsa = totaleCorsa * 0.6;
+  else if (eta === "over65") {
+    sconto = (totaleCorsa * 40) / 100;
   }
 
   // prezzo senza sconto
@@ -37,5 +42,20 @@ function genera() {
   let fixedPrice = totaleCorsa.toFixed(2)
 
   document.getElementById("calcPrezzo").innerHTML = totaleCorsa;
+  
+  let numCarrozza = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("carrozza").innerHTML = numCarrozza;
+  
+  let codice = Math.floor(Math.random() * 10000) + 1;
+  document.getElementById("outputCodice").innerHTML = codice;
 
-}
+};
+
+let Reset =document.getElementById("reset")
+Reset.addEventListener("click",
+function (){
+  document.getElementById("InfoBlock").reset();
+  const yourticket = document.getElementById("boxOutput");
+  yourTicket.style.display = "none";
+  }
+);

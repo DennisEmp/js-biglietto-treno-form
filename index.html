@@ -9,30 +9,61 @@
 </head>
 <body>
     <main>
-        <h1>Calcola il Prezzo del tuo Biglietto</h1>
-        <div class="box-input">
-            <h2>Nome e Cognome</h2>
-            <input type="text" id="nome" placeholder="Nome e Cognome">
-            <input type="chilometri" id="chilometri" placeholder="Chilometri">
-            <input type="età" id="eta" placeholder="Età">
-        </div>
-        <div class="buttons">
-            <button>Calcola</button>
-            <button>Annulla</button>
-        </div>
-
-        <div class="box-output">
-            <div class="row-title">
-                <h3>Nome passeggero</h3>
-                <h4>Offerta</h4>
-                <h4>Carrozza</h4>
-                <h4>Codice CP</h4>
-                <h4>Costo Biglietto</h4>
-            </div>
-            <div class="row-result">
-                <h2 id="outputNome"></h2>
-                <h2 id="calcPrezzo"></h2>
-            </div>
+        <div class="box-general">
+            <h1 id="title">Calcola il Prezzo del tuo Biglietto</h1>
+            <form class="box-input">
+                <div class="box">
+                    <span>Nome e Cognome</span>
+                    <br>
+                    <input type="text" id="nome" placeholder="Nome e Cognome">
+                </div>
+                <div class="box">
+                    <span>Chilometri da percorrere</span>
+                    <br>
+                    <input type="chilometri" id="chilometri" placeholder="Chilometri">
+                </div>
+                <div class="box">
+                    <span>Et&aacute;</span>
+                    <br>
+                    <select id="eta" aria-label="Default select example">                 
+                        <option selected>Scegli la tua fascia d'età</option>                 <option value="minore">Minore</option>                 
+                        <option value="over65">Over65</option>                 
+                        <option value="altro">Altro</option>               
+                    </select>
+                    
+                </div>   
+            </form>
+            <br>
+            <form class="buttons">
+                <button>Calcola</button>
+                <button id="reset">Annulla</button>
+            </form>
+            <br>
+            <form class="box-output">
+                <div class="row-title">
+                    <div class="box">
+                        <h3>Nome passeggero</h3>
+                        <span id="outputNome"></span>
+                    </div>
+                    <div class="box">
+                        <h4>Offerta</h4>
+                        <span>Standard Ticket</span>
+                    </div>
+                    <div class="box">
+                        <h4>Carrozza</h4>
+                        <span id="carrozza"></span>
+                    </div>
+                    <div class="box">
+                       <h4>Codice CP</h4>
+                       <span id="outputCodice"></span>
+                    </div>
+                    <div class="box">
+                        <h4>Costo Biglietto</h4>
+                        <span id="calcPrezzo"></span>
+                    </div>
+                </div>
+                <div class="row-result"></div>
+            </form>
         </div>
     <script src="js/main.js"></script>
 </main>
