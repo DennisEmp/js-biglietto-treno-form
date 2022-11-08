@@ -1,7 +1,7 @@
-const nome = document.getElementById("nome");
-const km = document.getElementById("chilometri");
-const eta = document.getElementById("eta")
-const button = document.querySelector("button")
+const nome = document.getElementById("nome").value;
+const km = document.getElementById("chilometri").value;
+const eta = document.getElementById("eta").value;
+const button = document.querySelector("button");
 
 console.log(nome, km);
 
@@ -37,5 +37,5 @@ function genera() {
   let fixedPrice = totaleCorsa.toFixed(2)
 
   document.getElementById("calcPrezzo").innerHTML = totaleCorsa;
-  
+
 }
