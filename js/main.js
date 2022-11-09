@@ -21,14 +21,14 @@ function genera(event) {
 
   // variante minorenne con sconto 20%
 
-  if (eta === "minore") {
+  if (eta.value === "minore") {
     sconto = (totaleCorsa * 20) / 100;
     totaleCorsa = totaleCorsa - sconto;
   }
 
   // variante over 65 con sconto 40%
 
-  else if (eta === "over65") {
+  else if (eta.value === "over65") {
     sconto = (totaleCorsa * 40) / 100;
     totaleCorsa = totaleCorsa - sconto;
   }
